@@ -1,0 +1,8 @@
+../testinput/BI-A1L.txt
+../testinput/BI-LIN.txt
+../testinput/BI-PA2l.txt
+../testinput/BI-PA2.txt
+../testinput/BI-PJV.txt
+../testinput/BI-SAP.txt
+../testinput/BI-TED.txt
+../testinput/BI-ZUM.txt

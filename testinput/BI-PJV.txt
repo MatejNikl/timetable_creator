@@ -1,0 +1,8 @@
+1	Přednáška	Balík M. 	336	288	9+10	9+10	 	 	 	 	 	 	 	 	 
+1-101	Cvičení	Balík M. 	48	16	 	 	2+3	2+3	 	 	 	 	 	 	Zapsat
+1-102	Cvičení	Podloucký M., Balík M.	48	47	 	 	7+8	7+8	 	 	 	 	 	 	Zapsat
+1-103	Cvičení	Daněček J. 	48	47	11+12	11+12	 	 	 	 	 	 	 	 	Zapsat
+1-104	Cvičení	Podloucký M. 	48	47	 	 	9+10	9+10	 	 	 	 	 	 	 
+1-105	Cvičení	Stuchlík O. 	48	44	 	 	11+12	11+12	 	 	 	 	 	 	Zapsat
+1-106	Cvičení	Stuchlík O. 	48	38	 	 	13+14	13+14	 	 	 	 	 	 	Zapsat
+1-107	Cvičení	Daněček J., Balík M.	48	48	7+8	7+8	 	 	 	 	 	 	 	 	Zapsat

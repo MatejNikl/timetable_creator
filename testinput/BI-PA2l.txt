@@ -1,0 +1,13 @@
+1022	Laboratoř	Chludil J., Hunka J.	48	48	 	 	 	 	 	 	5+6	5+6	 	 	Zapsat
+2023	Laboratoř	Kessl R. 	48	38	9+10	9+10	 	 	 	 	 	 	 	 	Zapsat
+2022	Laboratoř	Krupička M., Kessl R.	48	42	 	 	 	 	9+10	9+10	 	 	 	 	Zapsat
+2021	Laboratoř	Procházka A., Bezouška T.	48	45	 	 	 	 	 	 	 	 	5+6	5+6	Zapsat
+1011	Laboratoř	Procházka A., Žák J.	48	48	 	 	 	 	 	 	 	 	7+8	7+8	Zapsat
+1012	Laboratoř	Chludil J., Hunka J.	48	48	 	 	 	 	 	 	7+8	7+8	 	 	Zapsat
+1013	Laboratoř	Procházka A., Srna T.	48	48	 	 	 	 	3+4	3+4	 	 	 	 	Zapsat
+1014	Laboratoř	Sikora M. 	24	24	13+14	13+14	 	 	 	 	 	 	 	 	Zapsat
+1021	Laboratoř	Hunka J., Chludil J.	48	48	 	 	 	 	 	 	3+4	3+4	 	 	Zapsat
+1023	Laboratoř	Procházka A., Srna T.	48	47	 	 	 	 	5+6	5+6	 	 	 	 	Zapsat
+2011	Laboratoř	Procházka A., Bezouška T.	48	48	 	 	 	 	 	 	 	 	3+4	3+4	Zapsat
+2012	Laboratoř	Kessl R., Krupička M.	48	44	 	 	 	 	7+8	7+8	 	 	 	 	Zapsat
+2013	Laboratoř	Kessl R. 	48	46	3+4	3+4	 	 	 	 	 	 	 	 	Zapsat

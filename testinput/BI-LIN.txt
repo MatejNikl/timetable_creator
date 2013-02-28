@@ -1,0 +1,27 @@
+1	Přednáška	Olšák P. 	300	288	 	 	5+6	5+6	 	 	13+14	13+14	 	 	 
+1-101	Cvičení	Nollová M. 	24	24	 	 	 	 	 	 	 	 	5+6	5+6	Zapsat
+1-102	Cvičení	  	24	24	7+8	7+8	 	 	 	 	 	 	 	 	Zapsat
+1-103	Cvičení	Dombek D. 	24	24	 	 	 	 	9+10	9+10	 	 	 	 	Zapsat
+1-104	Cvičení	Dombek D. 	24	23	 	 	 	 	11+12	11+12	 	 	 	 	 
+1-105	Cvičení	Matyáš P. 	24	24	 	 	9+10	9+10	 	 	 	 	 	 	Zapsat
+1-106	Cvičení	Matyáš P. 	24	24	 	 	13+14	13+14	 	 	 	 	 	 	Zapsat
+1-107	Cvičení	Tichý J. 	24	24	 	 	 	 	 	 	 	 	5+6	5+6	Zapsat
+1-108	Cvičení	Matyáš P. 	24	24	 	 	11+12	11+12	 	 	 	 	 	 	Zapsat
+1-109	Cvičení	Štampach F. 	24	24	 	 	 	 	 	 	3+4	3+4	 	 	Zapsat
+1-110	Cvičení	Nollová M. 	24	24	 	 	 	 	 	 	 	 	3+4	3+4	Zapsat
+1-111	Cvičení	Dombek D. 	24	24	 	 	 	 	13+14	13+14	 	 	 	 	Zapsat
+1-112	Cvičení	Čermáková D. 	24	24	 	 	 	 	 	 	9+10	9+10	 	 	Zapsat
+
+2	Přednáška	Štampach F. 	300	271	 	 	7+8	7+8	13+14	13+14	 	 	 	 	 
+2-201	Cvičení	Nollová M. 	24	24	 	 	 	 	 	 	 	 	7+8	7+8	Zapsat
+2-202	Cvičení	Starý J. 	24	24	 	 	5+6	5+6	 	 	 	 	 	 	Zapsat
+2-203	Cvičení	  	24	14	9+10	9+10	 	 	 	 	 	 	 	 	Zapsat
+2-204	Cvičení	Štampach F. 	24	24	 	 	 	 	 	 	5+6	5+6	 	 	Zapsat
+2-205	Cvičení	Dombek D. 	24	24	 	 	 	 	5+6	5+6	 	 	 	 	Zapsat
+2-206	Cvičení	Starý J. 	24	24	 	 	3+4	3+4	 	 	 	 	 	 	Zapsat
+2-207	Cvičení	Tichý J. 	24	24	 	 	 	 	 	 	 	 	3+4	3+4	Zapsat
+2-208	Cvičení	Starý J. 	24	17	13+14	13+14	 	 	 	 	 	 	 	 	Zapsat
+2-209	Cvičení	Starý J. 	24	24	11+12	11+12	 	 	 	 	 	 	 	 	Zapsat
+2-211	Cvičení	Dombek D. 	24	24	 	 	 	 	3+4	3+4	 	 	 	 	Zapsat
+2-212	Cvičení	Čermáková D. 	24	24	 	 	 	 	 	 	13+14	13+14	 	 	Zapsat
+2-213	Cvičení	Čermáková D. 	24	24	 	 	 	 	 	 	11+12	11+12	 	 	Zapsat

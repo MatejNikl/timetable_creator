@@ -1,0 +1,21 @@
+1	Přednáška	Řehořek T. 	216	206	11+12	11+12	 	 	 	 	 	 	 	 	 
+1-101	Cvičení	Řehořek T. 	24	24	13+14	 	 	 	 	 	 	 	 	 	 
+1-101-1011	Laboratoř	Řehořek T. 	24	24	 	13+14	 	 	 	 	 	 	 	 	Zapsat
+1-102	Cvičení	Šlapák M. 	24	11	 	13+14	 	 	 	 	 	 	 	 	 
+1-102-1021	Laboratoř	Šlapák M. 	24	11	13+14	 	 	 	 	 	 	 	 	 	Zapsat
+1-103	Cvičení	Řehořek T. 	24	24	 	 	13+14	 	 	 	 	 	 	 	 
+1-103-1031	Laboratoř	Řehořek T. 	24	24	 	 	 	13+14	 	 	 	 	 	 	Zapsat
+1-104	Cvičení	Kopp M. 	24	16	 	 	 	13+14	 	 	 	 	 	 	 
+1-104-1041	Laboratoř	Kopp M. 	24	16	 	 	13+14	 	 	 	 	 	 	 	Zapsat
+1-105	Cvičení	Řehořek T. 	24	23	 	 	11+12	 	 	 	 	 	 	 	 
+1-105-1051	Laboratoř	Řehořek T. 	24	23	 	 	 	11+12	 	 	 	 	 	 	 
+1-106	Cvičení	Kopp M. 	24	24	 	 	 	11+12	 	 	 	 	 	 	 
+1-106-1061	Laboratoř	Kopp M. 	24	24	 	 	11+12	 	 	 	 	 	 	 	Zapsat
+1-107	Cvičení	Bartoň T. 	24	24	 	 	 	 	7+8	 	 	 	 	 	 
+1-107-1071	Laboratoř	Bartoň T. 	24	24	 	 	 	 	 	7+8	 	 	 	 	Zapsat
+1-108	Cvičení	Šlapák M. 	24	24	 	 	 	 	 	7+8	 	 	 	 	 
+1-108-1081	Laboratoř	Šlapák M. 	24	24	 	 	 	 	7+8	 	 	 	 	 	Zapsat
+1-109	Cvičení	Bartoň T. 	24	24	 	 	 	 	 	 	 	 	5+6	 	 
+1-109-1091	Laboratoř	Bartoň T. 	24	24	 	 	 	 	 	 	 	 	 	5+6	Zapsat
+1-110	Cvičení	Kopp M. 	24	11	 	 	 	 	 	 	 	 	 	5+6	 
+1-110-1101	Laboratoř	Kopp M. 	24	10	 	 	 	 	 	 	 	 	5+6	 	Zapsat

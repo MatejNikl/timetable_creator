@@ -1,0 +1,7 @@
+1	Přednáška	Vogel J. 	300	299	 	 	3+4	3+4	 	 	 	 	 	 	 
+1-101	Cvičení	Vagner L. 	160	159	 	 	 	 	 	 	11+12	 	 	 	 
+1-102	Cvičení	Vagner L. 	150	139	 	 	 	 	 	 	 	11+12	 	 	Zapsat
+
+2	Přednáška	Vogel J. 	300	275	 	 	 	 	11+12	11+12	 	 	 	 	 
+2-201	Cvičení	Vagner L. 	150	142	 	 	 	 	 	 	 	 	7+8	 	Zapsat
+2-202	Cvičení	Vagner L. 	150	133	 	 	 	 	 	 	 	 	 	7+8	Zapsat

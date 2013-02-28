@@ -1,0 +1,27 @@
+1	Přednáška	Kubátová H. 	300	237	 	 	1+2	1+2	 	 	 	 	 	 	 
+1-101	Cvičení	Novotný M. 	150	118	 	 	 	 	 	 	9+10	 	 	 	 
+1-101-1016	Laboratoř	Fišer P. 	24	24	13+14	13+14	 	 	 	 	 	 	 	 	Zapsat
+1-101-1015	Laboratoř	Pluháček A., Vít P.	24	24	 	 	 	 	 	 	7+8	7+8	 	 	Zapsat
+1-101-1012	Laboratoř	Hyniová K., Fišer P.	24	24	 	 	7+8	7+8	 	 	 	 	 	 	Zapsat
+1-101-1013	Laboratoř	Skrbek M., Benáček P.	24	24	 	 	 	 	11+12	11+12	 	 	 	 	Zapsat
+1-101-1014	Laboratoř	Douša J., Borecký J.	24	22	 	 	 	 	 	 	3+4	3+4	 	 	Zapsat
+1-102	Cvičení	Novotný M. 	150	119	 	 	 	 	 	 	 	9+10	 	 	 
+1-102-1026	Laboratoř	Kohlík M. 	24	24	 	 	 	 	 	 	 	 	3+4	3+4	Zapsat
+1-102-1027	Laboratoř	Kohlík M. 	24	24	 	 	 	 	 	 	11+12	11+12	 	 	Zapsat
+1-102-1025	Laboratoř	Borecký J., Hyniová K.	24	24	 	 	 	 	9+10	9+10	 	 	 	 	Zapsat
+1-102-1024	Laboratoř	Douša J., Borecký J.	24	24	 	 	 	 	 	 	5+6	5+6	 	 	Zapsat
+1-102-1023	Laboratoř	Skrbek M. 	24	23	 	 	 	 	13+14	13+14	 	 	 	 	Zapsat
+
+2	Přednáška	Kubátová H. 	300	227	 	 	 	 	9+10	9+10	 	 	 	 	 
+2-201	Cvičení	Novotný M. 	150	131	13+14	 	 	 	 	 	 	 	 	 	 
+2-201-2016	Laboratoř	Kohlík M. 	10	10	 	 	 	 	 	 	 	 	7+8	7+8	Zapsat
+2-201-2017	Laboratoř	Pluháček A., Vít P.	24	24	 	 	 	 	 	 	9+10	9+10	 	 	Zapsat
+2-201-2015	Laboratoř	Kohlík M. 	24	24	 	 	 	 	 	 	13+14	13+14	 	 	Zapsat
+2-201-2014	Laboratoř	Vaňát T., Jeřábek S.	24	23	 	 	 	 	5+6	5+6	 	 	 	 	 
+2-201-2012	Laboratoř	Pospíšil J. 	24	24	 	 	3+4	3+4	 	 	 	 	 	 	Zapsat
+2-201-2011	Laboratoř	Fišer P., Kubalík P.	24	24	9+10	9+10	 	 	 	 	 	 	 	 	Zapsat
+2-202	Cvičení	Novotný M. 	150	96	 	13+14	 	 	 	 	 	 	 	 	 
+2-202-2023	Laboratoř	Vaňát T., Jeřábek S.	24	24	 	 	 	 	3+4	3+4	 	 	 	 	Zapsat
+2-202-2024	Laboratoř	Borecký J., Jeřábek S.	24	24	 	 	 	 	7+8	7+8	 	 	 	 	Zapsat
+2-202-2025	Laboratoř	Kohlík M. 	24	24	 	 	 	 	 	 	 	 	5+6	5+6	Zapsat
+2-202-2022	Laboratoř	Pospíšil J. 	24	24	 	 	5+6	5+6	 	 	 	 	 	 	Zapsat
