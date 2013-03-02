@@ -2,6 +2,7 @@
  * timetable_creator is timetable-creating tool
  * 
  * Copyright (C) 2013 Matěj Nikl
+ * Copyright (C) 2013 Přemysl Janouch
  * 
  *
  * This file is part of timetable_creator
@@ -21,6 +22,8 @@
  * 
  */
 
+#include <config.h>
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -28,9 +31,13 @@
 #include <errno.h>
 #include <unistd.h>
 #include <sys/types.h>
+#include <locale.h>
 
 #include "structs.h"
 #include "timetable.h"
+
+#include "gettext.h"
+#define _(string) gettext (string)
 
 void set_indexes(struct timetable *t);
 
@@ -65,6 +72,10 @@ int main(int argc, char **argv) {
 
 	struct timetable t;
 	
+	setlocale (LC_ALL, "");
+	bindtextdomain (PACKAGE, LOCALEDIR);
+	textdomain (PACKAGE);
+
 	if (handle_args(argc, argv, &line, &line_len)) {
 		request_keypress();
 		return retval;
@@ -85,7 +96,7 @@ int main(int argc, char **argv) {
 							t.subjects = (struct subject *) realloc(t.subjects, size * sizeof(struct subject));
 						}
 					} else {
-						fprintf(stderr, "File '%s' does not contain any parallels!\n", line);
+						fprintf(stderr, _("File '%s' does not contain any parallels!\n"), line);
 						subject_free(t.subjects + t.n_subjects);
 					}
 				}
@@ -99,10 +110,11 @@ int main(int argc, char **argv) {
 				if (out) {
 					t.subscribe = (struct parallel **) malloc(t.n_subjects * sizeof(struct parallel *));
 					set_indexes(&t);
-					printf("Creating your timetable, please wait...\n");
+					printf(_("Creating your timetable, please wait...\n"));
 					if (timetable_create(&t, &out)) {
 						
 						
+						// FIXME gettext
 						printf("There are %lu possible combinations and ", t.n_combinations);
 						if (t.n_solutions > 0) {
 							if (t.n_solutions > 1) {
@@ -115,22 +127,22 @@ int main(int argc, char **argv) {
 							printf("There was not found any non-colliding timetable!\n");
 						}
 					} else if (t.n_solutions) {
-						printf("Some timetables (probably %d) were written into file '%s', \
-								but an error occurred so they are (probably) not the best possible!\n", t.n_solutions, t.out_path);
+						printf(_("Some timetables (probably %d) were written into file '%s', \
+								but an error occurred so they are (probably) not the best possible!\n"), t.n_solutions, t.out_path);
 					}
 					
 					if (out) {
 						fclose(out);
 					}
 				} else {
-					fprintf(stderr, "An error occurred while opening file '%s' for writing: %s!\n", t.out_path, strerror(errno));
+					fprintf(stderr, _("An error occurred while opening file '%s' for writing: %s!\n"), t.out_path, strerror(errno));
 					retval = 1;
 				}
 			} else {
-				fprintf(stderr, "There are no valid subjects to create timetable from!\n");
+				fprintf(stderr, _("There are no valid subjects to create timetable from!\n"));
 			}
 		} else {
-			fprintf(stderr, "An error occurred while opening file '%s' for reading: %s!\n", t.in_path, strerror(errno));
+			fprintf(stderr, _("An error occurred while opening file '%s' for reading: %s!\n"), t.in_path, strerror(errno));
 			retval = 1;
 		}
 	} else {
@@ -364,7 +376,7 @@ int settings_read(struct timetable *t, char *path) {
 		}
 		fclose(file);
 	} else {
-		fprintf(stderr, "An error occurred while opening settings file '%s': %s!\n", path, strerror(errno));
+		fprintf(stderr, _("An error occurred while opening settings file '%s': %s!\n"), path, strerror(errno));
 		return 0;
 	}
 	
@@ -373,13 +385,13 @@ int settings_read(struct timetable *t, char *path) {
 	}
 	
 	if (n == 0) {
-		fprintf(stderr, "File '%s' is not valid settings file!\n", path);
+		fprintf(stderr, _("File '%s' is not a valid settings file!\n"), path);
 		return 0;
 	} else if (n < SET_ITEMS) {
-		fprintf(stderr, "Not all settings were read from settings file '%s'!\n", path);
+		fprintf(stderr, _("Not all settings were read from the settings file '%s'!\n"), path);
 		return 0;
 	} else if (n > SET_ITEMS) {
-		fprintf(stderr, "Some settings were set more then once - from settings file '%s'!\n", path);
+		fprintf(stderr, _("Some settings were set more then once - from settings file '%s'!\n"), path);
 	}
 
 	return 1;
@@ -516,7 +528,7 @@ int subject_read(struct subject *s, int allow_nonfree, char *fn) {
 							p->lesson[p->n_lessons].day = i;
 							p->n_lessons++;
 						} else {
-							fprintf(stderr, "%s, line %d: lesson starting at %d. and ending at %d. hour is not valid lesson!\n", s->name, n_parallels, p->lesson[p->n_lessons].start, p->lesson[p->n_lessons].end);
+							fprintf(stderr, _("%s, line %d: lesson starting at %d. and ending at %d. hour is not valid lesson!\n"), s->name, n_parallels, p->lesson[p->n_lessons].start, p->lesson[p->n_lessons].end);
 						}
 					}
 				}
@@ -545,7 +557,7 @@ int subject_read(struct subject *s, int allow_nonfree, char *fn) {
 		s->curr_type = --(s->start_type);
 		fclose(file);
 	} else {
-		fprintf(stderr, "An error occurred while opening file '%s' for reading: %s!\n", fn, strerror(errno));
+		fprintf(stderr, _("An error occurred while opening file '%s' for reading: %s!\n"), fn, strerror(errno));
 	}
 
 	return s->n_parallels;
@@ -717,7 +729,7 @@ void name_copy(char *src, char **dst) {
 }
 
 void print_err(char *item, char *val) {
-	fprintf(stderr, "Invalid value '%s' for item '%s'!\n", val, item);
+	fprintf(stderr, _("Invalid value '%s' for item '%s'!\n"), val, item);
 }
 
 FILE* fopen_read(const char *path) {
@@ -751,8 +763,8 @@ int handle_args(int argc, char **argv, char **line, int *line_len) {
 		if (file) {	
 			fclose(file);
 		} else {
-			fprintf(stderr, "Expected settings file '%s' could not be opened: %s!\n", *line, strerror(errno));
-			fprintf(stderr, "Rename your settings file to '%s' and place it in same directory, as I am, or just pass me it's path as an argument!\n", DEF_PATH);
+			fprintf(stderr, _("Expected settings file '%s' could not be opened: %s!\n"), *line, strerror(errno));
+			fprintf(stderr, _("Rename your settings file to '%s' and place it in same directory, as I am, or just pass me it's path as an argument!\n"), DEF_PATH);
 			retval = 1;
 		}
 	} else if (argc == 2) {
@@ -761,18 +773,18 @@ int handle_args(int argc, char **argv, char **line, int *line_len) {
 		retval = 2;
 		do {
 			do {
-				printf("Where should I create the file? (path or just name): ");
+				printf(_("Where should I create the file? (path or just name): "));
 			} while (line_read(line, line_len, stdin) <= 0);
 			
 			file = fopen(*line, "wt");
 			if (file) {
 				break;
 			} else {
-				fprintf(stderr, "An error occurred while opening file '%s' for writing: %s!\n", *line, strerror(errno));
+				fprintf(stderr, _("An error occurred while opening file '%s' for writing: %s!\n"), *line, strerror(errno));
 			}
 		} while (1);
 		
-		printf("Writing list of subjects into file '%s'...", *line);
+		printf(_("Writing list of subjects into file '%s'..."), *line);
 		
 		for (i = 1; i < argc; i++) {
 			if (fprintf(file, "%s\n", argv[i]) < 0) {
@@ -783,9 +795,9 @@ int handle_args(int argc, char **argv, char **line, int *line_len) {
 		fclose(file);
 		
 		if (retval == 2) {
-			printf("success!\n");
+			printf(_("success!\n"));
 		} else {
-			fprintf(stderr, "unknown error..sorry!\n");
+			fprintf(stderr, _("unknown error..sorry!\n"));
 		}		
 	}
 	
@@ -793,10 +805,10 @@ int handle_args(int argc, char **argv, char **line, int *line_len) {
 }
 
 void request_keypress(void) {
-	printf("\nFeel free to report bug or just say thx: niklmate@fit.cvut.cz\n");
-	printf("timetable_creator  Copyright (C) 2013  Matěj Nikl\n");
+	printf(_("\nFeel free to report bugs or just say thx: niklmate@fit.cvut.cz\n"));
+	printf(_("timetable_creator  Copyright (C) 2013  Matěj Nikl\n"));
 #ifdef WINDOWS
-	printf("Press enter to quit...");
+	printf(_("Press enter to quit..."));
 	getchar();
 #endif
 }

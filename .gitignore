@@ -1,7 +1,23 @@
+# Backup files
 *.*~
-nbproject/
-debug/
-release/
-windows/
-out.txt
-timetable_creator*
+# IDE project files
+/nbproject/
+/Makefile.am.user
+# Autotools clutter
+/ABOUT-NLS
+/Makefile.in
+/aclocal.m4
+/configure
+/config.h.in
+/build/
+/build-aux/
+/autom4te.cache/
+/m4/
+/po/*.header
+/po/*.sed
+/po/*.sin
+/po/en@*
+/po/Makefile.in.in
+/po/Makevars.template
+/po/Rules-quot
+/src/gettext.h

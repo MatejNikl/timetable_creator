@@ -2,6 +2,7 @@
  * timetable_creator is timetable-creating tool
  * 
  * Copyright (C) 2013 Matěj Nikl
+ * Copyright (C) 2013 Přemysl Janouch
  * 
  *
  * This file is part of timetable_creator
@@ -21,12 +22,18 @@
  * 
  */
 
+#include <config.h>
+
 #include <stdio.h>
 #include <string.h>
 #include <errno.h>
 
 #include "structs.h"
 #include "timetable.h"
+
+#include "gettext.h"
+#define _(string) gettext (string)
+#define N_(string) string
 
 #define MIN_LEN 11
 void timetable_print(struct timetable *t, FILE *stream) {
@@ -40,8 +47,8 @@ void timetable_print(struct timetable *t, FILE *stream) {
 	"12:45   -   14:15", "14:30   -   16:00", "16:15   -   17:45",
 	"18:00   -   19:30", "19:45-20:30" };
 	/**/
-	char *days[] = { "Po - S", "Po - L", "Ut - S", "Ut - L", "St - S", "St - L", "Ct - S",
-	"Ct - L", "Pa - S", "Pa - L" };
+	char *days[] = { N_("Po - S"), N_("Po - L"), N_("Ut - S"), N_("Ut - L"),
+	                 N_("St - S"), N_("St - L"), N_("Ct - S"), N_("Ct - L"), N_("Pa - S"), N_("Pa - L") };
 	char *numbers[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11",
 	"12", "13", "14", "15" };
 	
@@ -117,7 +124,7 @@ void timetable_print(struct timetable *t, FILE *stream) {
 		for (j = 0; j < height; j++) {
 			fputc('|', stream);
 			if (j == 1) {
-				item_print(days[i], head_width, stream);
+				item_print(gettext (days[i]), head_width, stream);
 			} else {
 				chars_print(' ', head_width, stream);
 			}
@@ -153,8 +160,8 @@ void timetable_print(struct timetable *t, FILE *stream) {
 		fputc('\n', stream);
 	}
 	
-	fprintf(stream, "Rating: %d\n\n", t->best_rat);
-	fprintf(stream, "Subscribe to:\n");
+	fprintf(stream, _("Rating: %d\n\n"), t->best_rat);
+	fprintf(stream, _("Subscribe to:\n"));
 
 	for (i = 0; i < t->n_subjects; i++) {
 		fprintf(stream, "%s: %s\n", t->subscribe[i]->subj_name, t->subscribe[i]->id);
@@ -211,7 +218,7 @@ int timetable_create(struct timetable *t, FILE **stream) {
 					t->best_rat = rat;
 					*stream = freopen(t->out_path, "wt", *stream);
 					if (! *stream) {
-						fprintf(stderr, "An error occurred while re-opening file '%s' for writing: %s!\n", t->out_path, strerror(errno));
+						fprintf(stderr, _("An error occurred while re-opening file '%s' for writing: %s!\n"), t->out_path, strerror(errno));
 						return 0;
 					}
 					timetable_print(t, *stream);

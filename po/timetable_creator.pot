@@ -1,0 +1,188 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR timetable_creator Developers
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: timetable_creator 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-02 20:46+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/main.c:99
+#, c-format
+msgid "File '%s' does not contain any parallels!\n"
+msgstr ""
+
+#: src/main.c:113
+#, c-format
+msgid "Creating your timetable, please wait...\n"
+msgstr ""
+
+#: src/main.c:130
+#, c-format
+msgid ""
+"Some timetables (probably %d) were written into file '%s', \t\t\t\t\t\t\t"
+"\tbut an error occurred so they are (probably) not the best possible!\n"
+msgstr ""
+
+#: src/main.c:138 src/main.c:783
+#, c-format
+msgid "An error occurred while opening file '%s' for writing: %s!\n"
+msgstr ""
+
+#: src/main.c:142
+#, c-format
+msgid "There are no valid subjects to create timetable from!\n"
+msgstr ""
+
+#: src/main.c:145 src/main.c:560
+#, c-format
+msgid "An error occurred while opening file '%s' for reading: %s!\n"
+msgstr ""
+
+#: src/main.c:379
+#, c-format
+msgid "An error occurred while opening settings file '%s': %s!\n"
+msgstr ""
+
+#: src/main.c:388
+#, c-format
+msgid "File '%s' is not a valid settings file!\n"
+msgstr ""
+
+#: src/main.c:391
+#, c-format
+msgid "Not all settings were read from the settings file '%s'!\n"
+msgstr ""
+
+#: src/main.c:394
+#, c-format
+msgid "Some settings were set more then once - from settings file '%s'!\n"
+msgstr ""
+
+#: src/main.c:531
+#, c-format
+msgid ""
+"%s, line %d: lesson starting at %d. and ending at %d. hour is not valid "
+"lesson!\n"
+msgstr ""
+
+#: src/main.c:732
+#, c-format
+msgid "Invalid value '%s' for item '%s'!\n"
+msgstr ""
+
+#: src/main.c:766
+#, c-format
+msgid "Expected settings file '%s' could not be opened: %s!\n"
+msgstr ""
+
+#: src/main.c:767
+#, c-format
+msgid ""
+"Rename your settings file to '%s' and place it in same directory, as I am, "
+"or just pass me it's path as an argument!\n"
+msgstr ""
+
+#: src/main.c:776
+#, c-format
+msgid "Where should I create the file? (path or just name): "
+msgstr ""
+
+#: src/main.c:787
+#, c-format
+msgid "Writing list of subjects into file '%s'..."
+msgstr ""
+
+#: src/main.c:798
+#, c-format
+msgid "success!\n"
+msgstr ""
+
+#: src/main.c:800
+#, c-format
+msgid "unknown error..sorry!\n"
+msgstr ""
+
+#: src/main.c:808
+#, c-format
+msgid ""
+"\n"
+"Feel free to report bugs or just say thx: niklmate@fit.cvut.cz\n"
+msgstr ""
+
+#: src/main.c:809
+#, c-format
+msgid "timetable_creator  Copyright (C) 2013  Matěj Nikl\n"
+msgstr ""
+
+#: src/main.c:811
+#, c-format
+msgid "Press enter to quit..."
+msgstr ""
+
+#: src/timetable.c:49
+msgid "Po - S"
+msgstr ""
+
+#: src/timetable.c:49
+msgid "Po - L"
+msgstr ""
+
+#: src/timetable.c:49
+msgid "Ut - S"
+msgstr ""
+
+#: src/timetable.c:49
+msgid "Ut - L"
+msgstr ""
+
+#: src/timetable.c:50
+msgid "St - S"
+msgstr ""
+
+#: src/timetable.c:50
+msgid "St - L"
+msgstr ""
+
+#: src/timetable.c:50
+msgid "Ct - S"
+msgstr ""
+
+#: src/timetable.c:50
+msgid "Ct - L"
+msgstr ""
+
+#: src/timetable.c:50
+msgid "Pa - S"
+msgstr ""
+
+#: src/timetable.c:50
+msgid "Pa - L"
+msgstr ""
+
+#: src/timetable.c:162
+#, c-format
+msgid ""
+"Rating: %d\n"
+"\n"
+msgstr ""
+
+#: src/timetable.c:163
+#, c-format
+msgid "Subscribe to:\n"
+msgstr ""
+
+#: src/timetable.c:220
+#, c-format
+msgid "An error occurred while re-opening file '%s' for writing: %s!\n"
+msgstr ""
