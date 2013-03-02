@@ -1,12 +1,12 @@
-/* 
- * timetable_creator is timetable-creating tool
- * 
+/*
+ * timetable_creator is a timetable-creating tool
+ *
  * Copyright (C) 2013 Matěj Nikl
  * Copyright (C) 2013 Přemysl Janouch
- * 
+ *
  *
  * This file is part of timetable_creator
- * 
+ *
  * timetable_creator is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -19,7 +19,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * 
+ *
  */
 
 #include <config.h>
@@ -76,6 +76,9 @@ int main(int argc, char **argv) {
 	bindtextdomain (PACKAGE, LOCALEDIR);
 	textdomain (PACKAGE);
 
+	printf(_("timetable_creator  Copyright (C) 2013  Matěj Nikl\n"));
+	printf(_("Feel free to report bugs or just say thx: niklmate@fit.cvut.cz\n\n"));
+
 	if (handle_args(argc, argv, &line, &line_len)) {
 		request_keypress();
 		return retval;
@@ -87,13 +90,13 @@ int main(int argc, char **argv) {
 
 		if (in) { /* load timetables */
 			size = 2;
-			t.subjects = (struct subject *) malloc(size * sizeof(struct subject));
+			t.subjects = calloc(size, sizeof *t.subjects);
 			while (line_read(&line, &line_len, in) > 0) {
 				if (*line != '#') {
 					if (subject_read(t.subjects + t.n_subjects, t.rat.allow_nonfree, line)) {
 						if (++(t.n_subjects) == size) {
 							size *= 2;
-							t.subjects = (struct subject *) realloc(t.subjects, size * sizeof(struct subject));
+							t.subjects = realloc(t.subjects, size * sizeof *t.subjects);
 						}
 					} else {
 						fprintf(stderr, _("File '%s' does not contain any parallels!\n"), line);
@@ -112,34 +115,27 @@ int main(int argc, char **argv) {
 					set_indexes(&t);
 					printf(_("Creating your timetable, please wait...\n"));
 					if (timetable_create(&t, &out)) {
-						
-						
-						// FIXME gettext
-						printf("There are %lu possible combinations and ", t.n_combinations);
-						if (t.n_solutions > 0) {
-							if (t.n_solutions > 1) {
-								printf("%d best of them were ", t.n_solutions);
-							} else {
-								printf("the best of them was ");
-							}
-							printf("successfully written into file '%s'!\n", t.out_path);
-						} else {
-							printf("There was not found any non-colliding timetable!\n");
-						}
+						printf(_("There are %lu possible combinations.\n"), t.n_combinations);
+						if (t.n_solutions == 0)
+							printf(_("Could not find any non-colliding timetable!\n"));
+						else if (t.n_solutions == 1)
+							printf(_("The best combination has been successfully written to '%s'.\n"), t.out_path);
+						else
+							printf(_("The %d best combinations have been successfully written to '%s'.\n"), t.n_solutions, t.out_path);
 					} else if (t.n_solutions) {
-						printf(_("Some timetables (probably %d) were written into file '%s', \
-								but an error occurred so they are (probably) not the best possible!\n"), t.n_solutions, t.out_path);
+						printf(_("Some timetables (probably %d) were written into file '%s', "
+							"but an error occurred so they are (probably) not the best possible!\n"), t.n_solutions, t.out_path);
 					}
 					
 					if (out) {
 						fclose(out);
 					}
 				} else {
-					fprintf(stderr, _("An error occurred while opening file '%s' for writing: %s!\n"), t.out_path, strerror(errno));
+					fprintf(stderr, _("An error has occurred while opening file '%s' for writing: %s!\n"), t.out_path, strerror(errno));
 					retval = 1;
 				}
 			} else {
-				fprintf(stderr, _("There are no valid subjects to create timetable from!\n"));
+				fprintf(stderr, _("There are no valid subjects to create a timetable from!\n"));
 			}
 		} else {
 			fprintf(stderr, _("An error occurred while opening file '%s' for reading: %s!\n"), t.in_path, strerror(errno));
@@ -391,7 +387,7 @@ int settings_read(struct timetable *t, char *path) {
 		fprintf(stderr, _("Not all settings were read from the settings file '%s'!\n"), path);
 		return 0;
 	} else if (n > SET_ITEMS) {
-		fprintf(stderr, _("Some settings were set more then once - from settings file '%s'!\n"), path);
+		fprintf(stderr, _("Some settings were set more than once - from settings file '%s'!\n"), path);
 	}
 
 	return 1;
@@ -462,21 +458,11 @@ int header_read(struct parallel *p, FILE *stream) {
 		}
 	}
 
-	if (! item_read_char(NULL, 0, stream)) {
+	if (! item_read_char(NULL, 0, stream)
+	 || ! item_read_char(p->teacher, sizeof(p->teacher), stream)
+	 || ! item_read_int(&(p->usable), stream)
+	 || ! item_read_int(&dummy, stream))
 		return 0;
-	}
-	
-	if (! item_read_char(p->teacher, sizeof(p->teacher), stream)) {
-		return 0;
-	}
-	
-	if (! item_read_int(&(p->usable), stream)) {
-		return 0;
-	}
-	
-	if (! item_read_int(&dummy, stream)) {
-		return 0;
-	}
 	
 	p->usable -= dummy;
 	
@@ -764,7 +750,7 @@ int handle_args(int argc, char **argv, char **line, int *line_len) {
 			fclose(file);
 		} else {
 			fprintf(stderr, _("Expected settings file '%s' could not be opened: %s!\n"), *line, strerror(errno));
-			fprintf(stderr, _("Rename your settings file to '%s' and place it in same directory, as I am, or just pass me it's path as an argument!\n"), DEF_PATH);
+			fprintf(stderr, _("Rename your settings file to '%s' and place it in same directory as I am in, or just pass me its path as an argument!\n"), DEF_PATH);
 			retval = 1;
 		}
 	} else if (argc == 2) {
@@ -805,8 +791,6 @@ int handle_args(int argc, char **argv, char **line, int *line_len) {
 }
 
 void request_keypress(void) {
-	printf(_("\nFeel free to report bugs or just say thx: niklmate@fit.cvut.cz\n"));
-	printf(_("timetable_creator  Copyright (C) 2013  Matěj Nikl\n"));
 #ifdef WINDOWS
 	printf(_("Press enter to quit..."));
 	getchar();

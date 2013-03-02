@@ -1,12 +1,12 @@
-/* 
- * timetable_creator is timetable-creating tool
- * 
+/*
+ * timetable.c: timetable utilities
+ *
  * Copyright (C) 2013 Matěj Nikl
  * Copyright (C) 2013 Přemysl Janouch
- * 
+ *
  *
  * This file is part of timetable_creator
- * 
+ *
  * timetable_creator is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -19,7 +19,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * 
+ *
  */
 
 #include <config.h>
@@ -47,8 +47,8 @@ void timetable_print(struct timetable *t, FILE *stream) {
 	"12:45   -   14:15", "14:30   -   16:00", "16:15   -   17:45",
 	"18:00   -   19:30", "19:45-20:30" };
 	/**/
-	char *days[] = { N_("Po - S"), N_("Po - L"), N_("Ut - S"), N_("Ut - L"),
-	                 N_("St - S"), N_("St - L"), N_("Ct - S"), N_("Ct - L"), N_("Pa - S"), N_("Pa - L") };
+	char *days[] = { N_("Mo - E"), N_("Mo - O"), N_("Tu - E"), N_("Tu - O"),
+					 N_("We - E"), N_("We - O"), N_("Th - E"), N_("Th - O"), N_("Fr - E"), N_("Fr - O") };
 	char *numbers[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11",
 	"12", "13", "14", "15" };
 	
