@@ -1,6 +1,5 @@
 Compiling from git
 ==================
-$ ln -s /usr/share/gettext/gettext.h src
 $ mkdir m4
 $ autoreconf -fiv
 $ mkdir build && cd build

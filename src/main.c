@@ -33,11 +33,11 @@
 #include <sys/types.h>
 #include <locale.h>
 
+#include <glib.h>
+#include <glib/gi18n-lib.h>
+
 #include "structs.h"
 #include "timetable.h"
-
-#include "gettext.h"
-#define _(string) gettext (string)
 
 void set_indexes(struct timetable *t);
 

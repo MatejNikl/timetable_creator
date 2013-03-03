@@ -28,12 +28,11 @@
 #include <string.h>
 #include <errno.h>
 
+#include <glib.h>
+#include <glib/gi18n-lib.h>
+
 #include "structs.h"
 #include "timetable.h"
-
-#include "gettext.h"
-#define _(string) gettext (string)
-#define N_(string) string
 
 #define MIN_LEN 11
 void timetable_print(struct timetable *t, FILE *stream) {

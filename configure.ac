@@ -18,6 +18,14 @@ AC_PROG_CC
 AM_PROG_CC_C_O
 AC_PROG_INSTALL
 
+# Checks for libraries.
+PKG_CHECK_MODULES([GLIB], [glib-2.0 >= 2.26],,
+	[AC_MSG_ERROR([glib not found])])
+
+AC_ARG_WITH([gtk], AS_HELP_STRING([--with-gtk], [Build with GTK+ GUI]))
+AS_IF([test "x$with_gtk" = xyes],
+	[PKG_CHECK_MODULES([GTK3], [libgtk+-3.0 >= 3.0])])
+
 # Checks for header files.
 AC_CHECK_HEADERS([libintl.h locale.h stdlib.h string.h unistd.h])
 
